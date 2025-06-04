@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log($"username -> {userData.UserName}");
-        Debug.Log($"cash -> {userData.Cash}");
-        Debug.Log($"balance -> {userData.Balance}");
+        Debug.Log($"username -> {userData.UserName}\n" + 
+                  $"cash -> {userData.Cash}"+
+                  $"balance -> {userData.Balance}");
     }
 }
