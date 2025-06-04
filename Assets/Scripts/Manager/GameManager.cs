@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -22,7 +21,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Debug.Log($"username -> {userData.UserName}\n" + 
-                  $"cash -> {userData.Cash}"+
+                  $"cash -> {userData.Cash}\n"+
                   $"balance -> {userData.Balance}");
     }
 }
