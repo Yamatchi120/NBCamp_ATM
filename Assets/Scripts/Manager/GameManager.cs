@@ -4,7 +4,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public static event Action OnUserDataChange;
 
     [SerializeField] private string userName = "¼ÛÄ¡¿õ";
     [SerializeField] private int cash = 100000;
@@ -17,11 +16,13 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(Instance);
 
-            userData = new UserData(userName, cash, balance);
+        userData = new UserData(userName, cash, balance);
     }
 
-    public void DataChange()
+    private void Start()
     {
-        OnUserDataChange?.Invoke(); // ¹æ¼Û
+        Debug.Log($"username -> {userData.UserName}");
+        Debug.Log($"cash -> {userData.Cash}");
+        Debug.Log($"balance -> {userData.Balance}");
     }
 }

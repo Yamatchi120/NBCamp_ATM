@@ -7,13 +7,19 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text balanceTxt;
     [SerializeField] private Text cashTxt;
 
-    private void OnEnable() // 구독 추가
+    UserData Data = GameManager.Instance.userData;
+    private void Start()
     {
-        //GameManager.OnUserDataChange += 
+        Init();
     }
-
-    private void OnDisable() // 구독 해지
+    private void Update()
     {
-        //GameManager.OnUserDataChange -= 
+
+    }
+    void Init()
+    {
+        userNameTxt.text = Data.UserName;
+        cashTxt.text = Data.Cash.ToString();
+        balanceTxt.text = Data.Balance.ToString();
     }
 }
