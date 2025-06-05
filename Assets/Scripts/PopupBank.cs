@@ -20,4 +20,12 @@ public class PopupBank : MonoBehaviour
 
         withdrawBtn.gameObject.SetActive(true);
     }
+    public void OnClickDeposit(int amount)
+    {
+
+    }
+    public void OnClickWithdraw(int amount)
+    {
+
+    }
 }
