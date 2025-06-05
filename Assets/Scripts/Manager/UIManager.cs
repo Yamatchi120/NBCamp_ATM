@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        Init();
+        data = GameManager.Instance.userData;
     }
     void Init()
     {
