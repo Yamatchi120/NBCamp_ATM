@@ -1,4 +1,4 @@
-[System.Serializable]
+﻿[System.Serializable]
 public class UserData
 {
     private string userName;
@@ -15,6 +15,7 @@ public class UserData
         Balance = balance;
     }
 
+    // 계산로직 많아지거나, 복잡해지면 구조 분리
     public void DepositCash(int amount)
     {
         Cash -= amount;

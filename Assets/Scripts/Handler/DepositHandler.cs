@@ -19,6 +19,7 @@ public class DepositHandler : BaseHandler
         }
 
         userData.DepositCash(amount);
+        GameManager.Instance.OnClickBtn();
     }
     public override void OnClickCustom()
     {
@@ -33,10 +34,12 @@ public class DepositHandler : BaseHandler
         if (userData.Cash < inputAmount)
         {
             // Money Error
+            errorTitleTxt.text = "잔액이 부족합니다.";
             popupError.gameObject.SetActive(true);
             return;
         }
 
         userData.DepositCash(inputAmount);
+        GameManager.Instance.OnClickBtn();
     }
 }

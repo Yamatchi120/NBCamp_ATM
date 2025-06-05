@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnClickWithdraw
+      - m_Target: {fileID: 2111065853}
+        m_TargetAssemblyTypeName: WithdrawHandler, Assembly-CSharp
+        m_MethodName: OnClickPreset
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -418,9 +418,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnWithdrawBtn
+      - m_Target: {fileID: 2111065853}
+        m_TargetAssemblyTypeName: WithdrawHandler, Assembly-CSharp
+        m_MethodName: OnOpen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -684,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 249199339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1126.6776, y: 510.7498, z: 4.1499844}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 311726478}
   - component: {fileID: 311726477}
   m_Layer: 5
-  m_Name: DepositApplyBtn
+  m_Name: WithdrawApplyBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,9 +896,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnWithdrawCustomBtn
+      - m_Target: {fileID: 2111065855}
+        m_TargetAssemblyTypeName: ApplyHandler, Assembly-CSharp
+        m_MethodName: OnApply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1291,9 +1291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnDepositCustomBtn
+      - m_Target: {fileID: 2111065855}
+        m_TargetAssemblyTypeName: ApplyHandler, Assembly-CSharp
+        m_MethodName: OnApply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1424,9 +1424,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnClickDeposit
+      - m_Target: {fileID: 2111065854}
+        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
+        m_MethodName: OnClickPreset
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1886,9 +1886,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnApplyBtn
+      - m_Target: {fileID: 2111065855}
+        m_TargetAssemblyTypeName: ApplyHandler, Assembly-CSharp
+        m_MethodName: OnApply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2055,7 +2055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10c47c196476da45aaf0b037d589ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observedTarget: {fileID: 0}
+  observedTarget: {fileID: 758686023}
+  userNameTxt: {fileID: 1342235721}
+  balanceTxt: {fileID: 1614790217}
+  cashTxt: {fileID: 1848061896}
 --- !u!1 &758686020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,7 +2085,7 @@ Transform:
   m_GameObject: {fileID: 758686020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -261.19354, y: 30.565338, z: -6.1523438}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2112,7 +2115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777102181}
-  - component: {fileID: 777102182}
   m_Layer: 5
   m_Name: PopupBank
   m_TagString: Untagged
@@ -2143,25 +2145,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &777102182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777102180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5396caafbca450418b34252cd9ff099, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atm: {fileID: 1840609468}
-  depositBtn: {fileID: 291210542}
-  withdrawBtn: {fileID: 921705721}
-  popupError: {fileID: 332975875}
-  depositInputField: {fileID: 1271455341}
-  withdrawInputField: {fileID: 877727111}
-  errorTxt: {fileID: 1597279119}
 --- !u!1 &823527188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,9 +3033,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnClickWithdraw
+      - m_Target: {fileID: 2111065853}
+        m_TargetAssemblyTypeName: WithdrawHandler, Assembly-CSharp
+        m_MethodName: OnClickPreset
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3456,9 +3439,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnClickDeposit
+      - m_Target: {fileID: 2111065854}
+        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
+        m_MethodName: OnClickPreset
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3589,9 +3572,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnDepositBtn
+      - m_Target: {fileID: 2111065854}
+        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
+        m_MethodName: OnOpen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3664,7 +3647,7 @@ Transform:
   m_GameObject: {fileID: 1467584575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1126.6776, y: 510.7498, z: 4.1499844}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3753,9 +3736,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnWithdrawBackBtn
+      - m_Target: {fileID: 2111065853}
+        m_TargetAssemblyTypeName: WithdrawHandler, Assembly-CSharp
+        m_MethodName: OnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3886,9 +3869,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnDepositBackBtn
+      - m_Target: {fileID: 2111065854}
+        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
+        m_MethodName: OnBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4493,9 +4476,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnClickWithdraw
+      - m_Target: {fileID: 2111065853}
+        m_TargetAssemblyTypeName: WithdrawHandler, Assembly-CSharp
+        m_MethodName: OnClickPreset
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4979,9 +4962,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777102182}
-        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
-        m_MethodName: OnClickDeposit
+      - m_Target: {fileID: 2111065854}
+        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
+        m_MethodName: OnClickPreset
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5119,6 +5102,7 @@ GameObject:
   - component: {fileID: 2111065852}
   - component: {fileID: 2111065854}
   - component: {fileID: 2111065853}
+  - component: {fileID: 2111065855}
   m_Layer: 0
   m_Name: HandlerManager
   m_TagString: Untagged
@@ -5179,6 +5163,18 @@ MonoBehaviour:
   depositInputField: {fileID: 1271455341}
   withdrawInputField: {fileID: 877727111}
   errorTitleTxt: {fileID: 1597279119}
+--- !u!114 &2111065855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111065851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06791a5787c7da4abcb3bf802df0631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2138893839
 GameObject:
   m_ObjectHideFlags: 0

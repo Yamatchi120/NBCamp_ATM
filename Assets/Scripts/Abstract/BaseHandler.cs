@@ -6,7 +6,7 @@ public abstract class BaseHandler : MonoBehaviour
     [SerializeField] protected GameObject atm;
     [SerializeField] protected GameObject depositBtn;
     [SerializeField] protected GameObject withdrawBtn;
-    [SerializeField] protected GameObject popupError;
+    [SerializeField] public GameObject popupError;
                      
     [SerializeField] protected InputField depositInputField;
     [SerializeField] protected InputField withdrawInputField;
@@ -16,9 +16,9 @@ public abstract class BaseHandler : MonoBehaviour
     protected UserData userData;
     protected int inputAmount;
     protected string inputText;
-    protected void Start()
+    protected void Awake()
     {
-        userData = GameManager.Instance.userData;
+        userData = GameManager.Instance.UserData;
     }
     public virtual void OnOpen() { }
     public virtual void OnBack() { }

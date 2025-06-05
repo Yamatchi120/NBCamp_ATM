@@ -19,6 +19,7 @@ public class WithdrawHandler : BaseHandler
         }
 
         userData.WithdrawBalance(amount);
+        GameManager.Instance.OnClickBtn();
     }
     public override void OnClickCustom()
     {
@@ -38,5 +39,6 @@ public class WithdrawHandler : BaseHandler
         }
 
         userData.WithdrawBalance(inputAmount);
+        GameManager.Instance.OnClickBtn();
     }
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public event Action ClickSystem;
+    public event Action ClickSystem; // Subject
     public static GameManager Instance { get; private set; }
-    public UserData userData { get; private set; }
-
+    public BaseHandler BaseHandler { get; private set; }
+    public UserData UserData { get; private set; }
 
     [SerializeField] private string userName = "¼ÛÄ¡¿õ";
     [SerializeField] private int cash = 100000;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(Instance);
 
-        userData = new UserData(userName, cash, balance);
+        UserData = new UserData(userName, cash, balance);
     }
 
     public void OnClickBtn()
