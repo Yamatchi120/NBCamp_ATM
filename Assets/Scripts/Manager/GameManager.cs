@@ -9,19 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int balance = 50000;
 
     public UserData userData;
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(Instance);
 
         userData = new UserData(userName, cash, balance);
-    }
-
-    private void Start()
-    {
-        Debug.Log($"username -> {userData.UserName}\n" + 
-                  $"cash -> {userData.Cash}\n"+
-                  $"balance -> {userData.Balance}");
     }
 }

@@ -7,20 +7,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text balanceTxt;
     [SerializeField] private Text cashTxt;
 
+    UserData data;
     private void Start()
     {
-        Init();
+        data = GameManager.Instance.userData;
     }
     private void Update()
     {
-
+        Init();
     }
     void Init()
     {
-        UserData Data = GameManager.Instance.userData;
 
-        userNameTxt.text = Data.UserName;
-        cashTxt.text = Data.Cash.ToString();
-        balanceTxt.text = Data.Balance.ToString();
+        userNameTxt.text = data.UserName;
+        cashTxt.text = data.Cash.ToString("N0");
+        balanceTxt.text = data.Balance.ToString("N0");
     }
 }

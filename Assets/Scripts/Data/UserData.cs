@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+
 [System.Serializable]
 public class UserData
 {
@@ -13,5 +15,16 @@ public class UserData
         UserName = userName;
         Cash = cash;
         Balance = balance;
+    }
+
+    public void DepositCash(int amount)
+    {
+        Cash -= amount;
+        Balance += amount;
+    }
+    public void WithdrawBalance(int amount)
+    {
+        Balance -= amount;
+        Cash += amount;
     }
 }
