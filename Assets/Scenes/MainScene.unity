@@ -690,6 +690,7 @@ Transform:
   m_Children:
   - {fileID: 744721657}
   - {fileID: 758686022}
+  - {fileID: 2111065852}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &291210542
@@ -2054,9 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10c47c196476da45aaf0b037d589ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userNameTxt: {fileID: 1342235721}
-  balanceTxt: {fileID: 1614790217}
-  cashTxt: {fileID: 1848061896}
+  observedTarget: {fileID: 0}
 --- !u!1 &758686020
 GameObject:
   m_ObjectHideFlags: 0
@@ -5109,6 +5108,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002057754}
   m_CullTransparentMesh: 1
+--- !u!1 &2111065851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111065852}
+  - component: {fileID: 2111065854}
+  - component: {fileID: 2111065853}
+  m_Layer: 0
+  m_Name: HandlerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111065852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111065851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 249199340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111065853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111065851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551ac8d4abd30c6419c2b0252c3226c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atm: {fileID: 1840609468}
+  depositBtn: {fileID: 291210542}
+  withdrawBtn: {fileID: 921705721}
+  popupError: {fileID: 332975875}
+  depositInputField: {fileID: 1271455341}
+  withdrawInputField: {fileID: 877727111}
+  errorTitleTxt: {fileID: 1597279119}
+--- !u!114 &2111065854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111065851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1db2a0eb3d54d54e9d8d351985ec2b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atm: {fileID: 1840609468}
+  depositBtn: {fileID: 291210542}
+  withdrawBtn: {fileID: 921705721}
+  popupError: {fileID: 332975875}
+  depositInputField: {fileID: 1271455341}
+  withdrawInputField: {fileID: 877727111}
+  errorTitleTxt: {fileID: 1597279119}
 --- !u!1 &2138893839
 GameObject:
   m_ObjectHideFlags: 0
