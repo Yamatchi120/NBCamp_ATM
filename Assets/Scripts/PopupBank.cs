@@ -1,6 +1,4 @@
-using TMPro;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PopupBank : MonoBehaviour
@@ -9,17 +7,19 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject depositBtn;
     [SerializeField] private GameObject withdrawBtn;
     [SerializeField] private GameObject popupError;
-
-    [SerializeField] private TMP_InputField inputField;
+    [SerializeField] private InputField depositInputField;
+    [SerializeField] private InputField withdrawInputField;
+    [SerializeField] private Text errorTxt;
 
     private UserData userData;
     int inputAmount;
-    string userCustom;
+    string inputText;
     private void Start()
     {
-        //userCustom = inputField.text;
         userData = GameManager.Instance.userData;
     }
+
+
     public void OnDepositBtn()
     {
         atm.gameObject.SetActive(false);
@@ -69,27 +69,43 @@ public class PopupBank : MonoBehaviour
     {
         popupError.gameObject.SetActive(false);
     }
-
-
     public void OnDepositCustomBtn()
     {
-        InputAmount();
+        inputText = depositInputField.text.Trim();
+
+        if (!int.TryParse(inputText, out inputAmount))
+        {
+            // Eng Error
+            errorTxt.text = "숫자만 입력해주세요.";
+            popupError.gameObject.SetActive(true);
+        }
+        if (userData.Cash < inputAmount)
+        {
+            // Money Error
+            popupError.gameObject.SetActive(true);
+            return;
+        }
+
         userData.DepositCash(inputAmount);
     }
+
     public void OnWithdrawCustomBtn()
     {
-        InputAmount();
-        userData.WithdrawBalance(inputAmount);
-    }
+        inputText = withdrawInputField.text.Trim();
 
-
-    private void InputAmount()
-    {
-
-        if (int.TryParse(userCustom, out inputAmount))
+        if (!int.TryParse(inputText, out inputAmount))
         {
-            Debug.Log($"�Էµ� ���� -> {inputAmount}");
+            // Eng Error
+            errorTxt.text = "숫자만 입력해주세요.";
+            popupError.gameObject.SetActive(true);
         }
-        else { Debug.LogWarning("���ڰ� �ƴմϴ�."); }
+        if (userData.Balance < inputAmount)
+        {
+            // Money Error
+            popupError.gameObject.SetActive(true);
+            return;
+        }
+
+        userData.WithdrawBalance(inputAmount);
     }
 }

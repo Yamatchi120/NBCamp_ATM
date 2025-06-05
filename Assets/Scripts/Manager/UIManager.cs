@@ -17,4 +17,5 @@ public class UIManager : MonoBehaviour
         cashTxt.text = GameManager.Instance.userData.Cash.ToString("N0");
         balanceTxt.text = GameManager.Instance.userData.Balance.ToString("N0");
     }
+
 }
