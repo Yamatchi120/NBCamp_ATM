@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -17,12 +16,5 @@ public class GameManager : MonoBehaviour
         else Destroy(Instance);
 
         userData = new UserData(userName, cash, balance);
-    }
-
-    private void Start()
-    {
-        Debug.Log($"username -> {userData.UserName}\n" + 
-                  $"cash -> {userData.Cash}"+
-                  $"balance -> {userData.Balance}");
     }
 }
