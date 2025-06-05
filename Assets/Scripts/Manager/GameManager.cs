@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public event Action ClickSystem;
     public static GameManager Instance { get; private set; }
     public UserData userData { get; private set; }
 
@@ -16,5 +18,10 @@ public class GameManager : MonoBehaviour
         else Destroy(Instance);
 
         userData = new UserData(userName, cash, balance);
+    }
+
+    public void OnClickBtn()
+    {
+        ClickSystem?.Invoke();
     }
 }
