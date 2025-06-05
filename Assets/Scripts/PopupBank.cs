@@ -8,6 +8,8 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject atm;
     [SerializeField] private GameObject depositBtn;
     [SerializeField] private GameObject withdrawBtn;
+    [SerializeField] private GameObject popupError;
+
     [SerializeField] private TMP_InputField inputField;
 
     private UserData userData;
@@ -15,7 +17,7 @@ public class PopupBank : MonoBehaviour
     string userCustom;
     private void Start()
     {
-        userCustom = inputField.text;
+        //userCustom = inputField.text;
         userData = GameManager.Instance.userData;
     }
     public void OnDepositBtn()
@@ -28,6 +30,8 @@ public class PopupBank : MonoBehaviour
         atm.gameObject.SetActive(false);
         withdrawBtn.gameObject.SetActive(true);
     }
+
+
     public void OnDepositBackBtn()
     {
         depositBtn.gameObject.SetActive(false);
@@ -38,14 +42,35 @@ public class PopupBank : MonoBehaviour
         withdrawBtn.gameObject.SetActive(false);
         atm.gameObject.SetActive(true);
     }
+
+
     public void OnClickDeposit(int amount)
     {
+        if(userData.Cash < amount)
+        {
+            popupError.gameObject.SetActive(true);
+            return;
+        }
+
         userData.DepositCash(amount);
     }
     public void OnClickWithdraw(int amount)
     {
+        if (userData.Balance < amount)
+        {
+            popupError.gameObject.SetActive(true);
+            return;
+        }
+
         userData.WithdrawBalance(amount);
     }
+
+    public void OnApplyBtn()
+    {
+        popupError.gameObject.SetActive(false);
+    }
+
+
     public void OnDepositCustomBtn()
     {
         InputAmount();
@@ -56,10 +81,12 @@ public class PopupBank : MonoBehaviour
         InputAmount();
         userData.WithdrawBalance(inputAmount);
     }
+
+
     private void InputAmount()
     {
 
-        if(int.TryParse(userCustom, out inputAmount))
+        if (int.TryParse(userCustom, out inputAmount))
         {
             Debug.Log($"입력된 숫자 -> {inputAmount}");
         }
