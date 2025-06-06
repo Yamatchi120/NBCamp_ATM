@@ -1,4 +1,6 @@
-﻿[System.Serializable]
+﻿using System.Diagnostics;
+
+[System.Serializable]
 public class UserData
 {
     private string userName;

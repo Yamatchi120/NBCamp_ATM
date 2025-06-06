@@ -8,7 +8,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text balanceTxt;
     [SerializeField] private Text cashTxt;
 
-    void Init()
+    GameManager gm;
+
+    public void Init()
     {
         userNameTxt.text = GameManager.Instance.UserData.UserName;
         cashTxt.text = GameManager.Instance.UserData.Cash.ToString("N0");
@@ -17,13 +19,15 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable() // Observer+
     {
-        if(GameManager.Instance != null)
-           GameManager.Instance.ClickSystem += Init;
+        gm = GameManager.Instance;
+        gm.ClickSystem += Init;
     }
     private void OnDisable() // Observer-
     {
-        if (GameManager.Instance != null)
-            GameManager.Instance.ClickSystem -= Init;
+        gm.ClickSystem -= Init;
     }
-
+    private void Start()
+    {
+        Init();
+    }
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
 public class ApplyHandler : MonoBehaviour
 {
+    [SerializeField] public GameObject popupError;
     public void OnApply()
     {
-        GameManager.Instance.BaseHandler.popupError.gameObject.SetActive(false);
+        popupError.gameObject.SetActive(false);
     }
 }

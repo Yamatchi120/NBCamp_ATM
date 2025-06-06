@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public class WithdrawHandler : BaseHandler
 {
     public override void OnOpen()
@@ -14,6 +16,7 @@ public class WithdrawHandler : BaseHandler
     {
         if (userData.Balance < amount)
         {
+            ShowError(error01);
             popupError.gameObject.SetActive(true);
             return;
         }
@@ -23,20 +26,7 @@ public class WithdrawHandler : BaseHandler
     }
     public override void OnClickCustom()
     {
-        inputText = withdrawInputField.text.Trim();
-
-        if (!int.TryParse(inputText, out inputAmount))
-        {
-            // Eng Error
-            errorTitleTxt.text = "숫자만 입력해주세요.";
-            popupError.gameObject.SetActive(true);
-        }
-        if (userData.Balance < inputAmount)
-        {
-            // Money Error
-            popupError.gameObject.SetActive(true);
-            return;
-        }
+        base.OnClickCustom();
 
         userData.WithdrawBalance(inputAmount);
         GameManager.Instance.OnClickBtn();
