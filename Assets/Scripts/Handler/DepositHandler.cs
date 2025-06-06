@@ -27,7 +27,23 @@ public class DepositHandler : BaseHandler
     }
     public override void OnClickCustom()
     {
-        base.OnClickCustom();
+        inputText = depositInputField.text.Trim();
+
+        if (!int.TryParse(inputText, out inputAmount))
+        {
+            //base.OnClickCustom();
+            // Eng Error
+            ShowError(error02);
+            popupError.gameObject.SetActive(true);
+            return;
+        }
+        if (userData.Cash < inputAmount)
+        {
+            // Money Error
+            ShowError(error01);
+            popupError.gameObject.SetActive(true);
+            return;
+        }
 
         userData.DepositCash(inputAmount);
         GameManager.Instance.OnClickBtn();
