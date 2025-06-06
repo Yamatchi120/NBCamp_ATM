@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using UnityEngine;
+
 public class DepositHandler : BaseHandler
 {
     public override void OnOpen()
@@ -14,6 +17,7 @@ public class DepositHandler : BaseHandler
     {
         if (userData.Cash < amount)
         {
+            ShowError(error01);
             popupError.gameObject.SetActive(true);
             return;
         }
@@ -23,21 +27,7 @@ public class DepositHandler : BaseHandler
     }
     public override void OnClickCustom()
     {
-        inputText = depositInputField.text.Trim();
-
-        if (!int.TryParse(inputText, out inputAmount))
-        {
-            // Eng Error
-            errorTitleTxt.text = "숫자만 입력해주세요.";
-            popupError.gameObject.SetActive(true);
-        }
-        if (userData.Cash < inputAmount)
-        {
-            // Money Error
-            errorTitleTxt.text = "잔액이 부족합니다.";
-            popupError.gameObject.SetActive(true);
-            return;
-        }
+        base.OnClickCustom();
 
         userData.DepositCash(inputAmount);
         GameManager.Instance.OnClickBtn();

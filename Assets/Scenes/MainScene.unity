@@ -688,8 +688,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 744721657}
   - {fileID: 758686022}
+  - {fileID: 744721657}
   - {fileID: 2111065852}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -896,9 +896,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2111065855}
-        m_TargetAssemblyTypeName: ApplyHandler, Assembly-CSharp
-        m_MethodName: OnApply
+      - m_Target: {fileID: 2111065853}
+        m_TargetAssemblyTypeName: WithdrawHandler, Assembly-CSharp
+        m_MethodName: OnClickCustom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1291,9 +1291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2111065855}
-        m_TargetAssemblyTypeName: ApplyHandler, Assembly-CSharp
-        m_MethodName: OnApply
+      - m_Target: {fileID: 2111065854}
+        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
+        m_MethodName: OnClickCustom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4068,7 +4068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC794\uC561\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4."
+  m_Text: 
 --- !u!222 &1597279120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5175,6 +5175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06791a5787c7da4abcb3bf802df0631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupError: {fileID: 332975875}
 --- !u!1 &2138893839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,7 +5249,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 249199340}
   - {fileID: 363757617}
   - {fileID: 1467584576}
-  - {fileID: 249199340}
   - {fileID: 2138893842}
