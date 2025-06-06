@@ -6,7 +6,8 @@
   <summary>UML 클래스 다이어그램 연습</summary>
   ATM System<br>
   2차<br> 
-  <img src="https://github.com/user-attachments/assets/357f257f-9f63-40cf-905a-ca672274de08" width = "600"/><br>
+  <img src="https://github.com/user-attachments/assets/c88def6b-f71a-4589-b062-b0749763730f" width = "600"/><br>
+
 
   ATM System - Observer Pattern<br>
   2차<br>
@@ -23,4 +24,4 @@
 <img src="https://github.com/user-attachments/assets/92a13f51-4ab8-4964-af61-03a0fe54ec7d" width = "600"/><br>
 
 5차 최종 UML Class Diagram<br>
-<img src="https://github.com/user-attachments/assets/4ae5f005-cbad-4528-a793-90bdb625e5af" width = "600"/><br>
+<img src="https://github.com/user-attachments/assets/6a084929-ee84-4a66-8a7c-03a44d5dbae7" width = "600"/><br>
