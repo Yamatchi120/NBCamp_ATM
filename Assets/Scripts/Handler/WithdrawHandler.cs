@@ -1,4 +1,3 @@
-using System.Diagnostics;
 
 public class WithdrawHandler : BaseHandler
 {
@@ -26,7 +25,7 @@ public class WithdrawHandler : BaseHandler
     }
     public override void OnClickCustom()
     {
-        inputText = depositInputField.text.Trim();
+        inputText = withdrawInputField.text.Trim();
 
         if (!int.TryParse(inputText, out inputAmount))
         {

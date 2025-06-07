@@ -17,7 +17,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(Instance);
 
-        UserData = new UserData(userName, cash, balance);
+        UserData loaded = UserData.Load();
+        if (loaded != null)
+            UserData = loaded;
+        else
+            UserData = new UserData(userName, cash, balance);
     }
 
     public void OnClickBtn()
