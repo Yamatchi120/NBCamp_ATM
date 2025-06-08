@@ -32,7 +32,7 @@ public class UserData
     {
         Balance -= amount;
         Cash += amount;
-        Save();
+        Save(); 
     }
 
     void Save()
