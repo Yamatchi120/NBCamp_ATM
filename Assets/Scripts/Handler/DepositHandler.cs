@@ -1,6 +1,3 @@
-using System.Diagnostics;
-using UnityEngine;
-
 public class DepositHandler : BaseHandler
 {
     public override void OnOpen()

@@ -1,4 +1,3 @@
-
 public class WithdrawHandler : BaseHandler
 {
     public override void OnOpen()
