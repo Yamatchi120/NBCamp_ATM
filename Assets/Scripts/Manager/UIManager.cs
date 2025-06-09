@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        Init();
+        //Init();
     }
     public void Init()
     {
