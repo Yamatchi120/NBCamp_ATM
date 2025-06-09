@@ -1,7 +1,10 @@
 # NBCamp_ATM
+## 기술적 의사구현
+ - 옵저버 패턴
+   - 원래 옵저버 패턴은 Subject - Observer
+   - 현재 구현한 옵저버 Subject - Observer - Trigger
 
 ## UML Class Diagram
-### UML Class Diagram
 <details>
   <summary>UML 클래스 다이어그램 연습</summary>
   ATM System<br>
