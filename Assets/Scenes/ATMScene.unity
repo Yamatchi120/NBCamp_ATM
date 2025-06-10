@@ -3439,7 +3439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10c47c196476da45aaf0b037d589ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observedTarget: {fileID: 0}
+  observedTarget: {fileID: 758686023}
   userNameTxt: {fileID: 1342235721}
   balanceTxt: {fileID: 1614790217}
   cashTxt: {fileID: 1848061896}
@@ -8137,10 +8137,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DepositHandler, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 2111065855}
+        m_TargetAssemblyTypeName: AuthHandler, Assembly-CSharp
+        m_MethodName: OnSignUp
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

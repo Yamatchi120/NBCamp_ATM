@@ -1,4 +1,4 @@
-public class WithdrawHandler : BaseHandler
+public class WithdrawHandler : ATMHandlerBase
 {
     // Withdraw Trigger
     public override void OnOpen()

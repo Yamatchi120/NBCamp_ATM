@@ -1,4 +1,4 @@
-public class DepositHandler : BaseHandler
+public class DepositHandler : ATMHandlerBase
 {
     // Deposit Trigger
     public override void OnOpen()

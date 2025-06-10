@@ -7,7 +7,7 @@ public class DataStorage : MonoBehaviour
     public void Save(UserData data)
     {
         string savePath = Application.persistentDataPath + $"/{data.UserName}.json";
-        string json = JsonConvert.SerializeObject(this, Formatting.Indented);
+        string json = JsonConvert.SerializeObject(data, Formatting.Indented);
         File.WriteAllText(savePath, json);
         Debug.Log($"¿˙¿Â: {savePath}");
         Debug.Log(json);
