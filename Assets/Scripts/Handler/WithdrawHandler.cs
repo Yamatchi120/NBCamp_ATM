@@ -1,5 +1,6 @@
 public class WithdrawHandler : BaseHandler
 {
+    // Withdraw Trigger
     public override void OnOpen()
     {
         atm.gameObject.SetActive(false);

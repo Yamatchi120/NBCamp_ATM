@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class DataStorage : MonoBehaviour
 {
-    private static string savePath = Application.persistentDataPath + $"/{GameManager.Instance.UserData.UserName}.json";
-
-    public void Save()
+    public void Save(UserData data)
     {
+        string savePath = Application.persistentDataPath + $"/{data.UserName}.json";
         string json = JsonConvert.SerializeObject(this, Formatting.Indented);
         File.WriteAllText(savePath, json);
-        UnityEngine.Debug.Log($"저장: {savePath}");
+        Debug.Log($"저장: {savePath}");
         Debug.Log(json);
     }
 
-    public static UserData Load()
+    public UserData Load(string userName)
     {
+        string savePath = Application.persistentDataPath + $"/{userName}.json";
         if (!File.Exists(savePath))
         {
-            UnityEngine.Debug.LogWarning("저장 파일 없음");
+            Debug.LogWarning("저장 파일 없음");
             return null;
         }
 
         string json = File.ReadAllText(savePath);
         UserData data = JsonConvert.DeserializeObject<UserData>(json);
-        UnityEngine.Debug.Log($"로드: {savePath}");
+        Debug.Log($"로드: {savePath}");
 
         GameManager.Instance.OnClickBtn();
         return data;
