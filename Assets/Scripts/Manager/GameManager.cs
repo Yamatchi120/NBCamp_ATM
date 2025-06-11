@@ -10,13 +10,13 @@ public class GameManager : MonoBehaviour
     public UserData UserData { get; private set; }
     public DataStorage DataStorage { get; private set; }
 
-    [SerializeField] private InputField userNameInputField;
-    [SerializeField] private InputField userIDInputField;
-    [SerializeField] private InputField userPWInputField;
+    //[SerializeField] private InputField userNameInputField;
+    //[SerializeField] private InputField userIDInputField;
+    //[SerializeField] private InputField userPWInputField;
 
-    private string userName;
-    private string userID;
-    private string userPW;
+    public string userName;
+    public string userID;
+    public string userPW;
     [SerializeField] private int cash = 100000;
     [SerializeField] private int balance = 50000;
 
@@ -28,15 +28,15 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        userName = userNameInputField.text.Trim();
-        userID = userIDInputField.text.Trim();
-        userPW = userPWInputField.text.Trim();
+        //userName = userNameInputField.text.Trim();
+        //userID = userIDInputField.text.Trim();
+        //userPW = userPWInputField.text.Trim();
 
         //UserData loaded = DataStorage.Load(userID);
         //if (loaded != null)
         //    UserData = loaded;
         //else
-        UserData = new UserData(userID, userPW, userName, cash, balance);
+        //    UserData = new UserData(userName, userID, userPW, cash, balance);
         
     }
     public void OnClickBtn() // Subject
