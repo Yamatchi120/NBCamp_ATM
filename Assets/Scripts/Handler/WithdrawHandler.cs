@@ -26,9 +26,9 @@ public class WithdrawHandler : BaseHandler
     {
         inputText = withdrawInputField.text.Trim();
 
-        if (!int.TryParse(inputText, out inputAmount))
+        bool num = int.TryParse(inputText, out inputAmount);
+        if (!num || inputAmount <= 0)
         {
-            //base.OnClickCustom();
             // Eng Error
             ShowError(error02);
             popupError.gameObject.SetActive(true);
