@@ -4,10 +4,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public event Action ClickSystem; // Subject
-
     public static GameManager Instance { get; private set; }
-    public ATMHandlerBase ATMHandlerBase { get; private set; }
-    public UserData UserData { get; private set; }
+    public BaseHandler BaseHandler { get; private set; }
+    public UserData UserData { get; set; }
     public DataStorage DataStorage { get; private set; }
 
     [SerializeField] private InputField userNameInputField;
@@ -32,11 +31,11 @@ public class GameManager : MonoBehaviour
         userID = userIDInputField.text.Trim();
         userPW = userPWInputField.text.Trim();
 
-        //UserData loaded = DataStorage.Load(userID);
-        //if (loaded != null)
-        //    UserData = loaded;
+        UserData loaded = DataStorage.Load(userID);
+        if (loaded != null)
+            UserData = loaded;
         //else
-        UserData = new UserData(userID, userPW, userName, cash, balance);
+        //UserData = new UserData(userID, userPW, userName, cash, balance);
         
     }
     public void OnClickBtn() // Subject

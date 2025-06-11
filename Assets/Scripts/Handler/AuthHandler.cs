@@ -5,6 +5,12 @@ public class AuthHandler : MonoBehaviour
     [SerializeField] public GameObject popupSignUp;
     [SerializeField] public GameObject popupError;
 
+    private GameManager gm;
+    private UserData data;
+    private void Awake()
+    {
+        gm = GameManager.Instance;
+    }
     public void OnApply()
     {
         popupError.gameObject.SetActive(false);
@@ -27,6 +33,7 @@ public class AuthHandler : MonoBehaviour
     }
     public void OnSignUp()
     {
-        GameManager.Instance.DataStorage.Save(GameManager.Instance.UserData);
+        data = new UserData(gm.userID, userData.UserPW, userData.UserName, userData.Cash, userData.Balance);
+        gm.DataStorage.Save(GameManager.Instance.UserData);
     }
 }
