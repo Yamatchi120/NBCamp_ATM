@@ -31,8 +31,8 @@
 
 <details>
  <summary>해보고 싶었던 것</summary>
- DepositHandler.cs - WithdrawHandler.cs 통합
- ErrorHandler.cs에서 에러 관리
+ DepositHandler.cs - WithdrawHandler.cs 통합<br>
+ ErrorHandler.cs에서 에러 관리<br>
  
  Observer - MVC 패턴 사용 (위에가 완성 되면)
 </details>
