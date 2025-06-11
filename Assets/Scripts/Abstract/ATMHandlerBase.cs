@@ -7,13 +7,12 @@ public abstract class ATMHandlerBase : MonoBehaviour
     [SerializeField] protected GameObject depositBtn;
     [SerializeField] protected GameObject withdrawBtn;
     [SerializeField] public GameObject popupError;
-
+                     
     [SerializeField] protected InputField depositInputField;
     [SerializeField] protected InputField withdrawInputField;
                      
     [SerializeField] protected Text errorTitleTxt;
 
-    protected ErrorHandler errorHandler;
     protected UserData userData;
     protected int inputAmount;
     protected string inputText;

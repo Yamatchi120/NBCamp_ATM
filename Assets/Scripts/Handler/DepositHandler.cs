@@ -13,23 +13,19 @@ public class DepositHandler : ATMHandlerBase
     }
     public override void OnClickPreset(int amount)
     {
-
-        errorHandler.ShowMoneyError(amount);
-        //if (userData.Cash < amount)
-        //{
-        //    ShowError(error01);
-        //    popupError.gameObject.SetActive(true);
-        //    return;
-        //}
+        if (userData.Cash < amount)
+        {
+            ShowError(error01);
+            popupError.gameObject.SetActive(true);
+            return;
+        }
 
         userData.DepositCash(amount);
         GameManager.Instance.OnClickBtn();
-    } 
+    }
     public override void OnClickCustom()
     {
         inputText = depositInputField.text.Trim();
-
-        //errorHandler.TShowError(inputText);
 
         if (!int.TryParse(inputText, out inputAmount))
         {

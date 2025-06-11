@@ -1,6 +1,8 @@
 ﻿[System.Serializable]
 public class UserData
 {
+    //private static string savePath = Application.persistentDataPath + "/userdata.json";
+
     private string userID;
     public string UserID { get; private set; }
     private string userPW;
@@ -12,11 +14,11 @@ public class UserData
     private int balance;
     public int Balance { get; private set; }
 
-    public UserData(string userName, string userID, string userPW, int cash, int balance)
+    public UserData(string userID, string userPW, string userName, int cash, int balance)
     {
-        UserName = userName;
         UserID = userID;
         UserPW = userPW;
+        UserName = userName;
         Cash = cash;
         Balance = balance;
     }
