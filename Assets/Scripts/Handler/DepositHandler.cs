@@ -28,6 +28,7 @@ public class DepositHandler : BaseHandler
 
         if (!int.TryParse(inputText, out inputAmount))
         {
+            //base.OnClickCustom();
             // Eng Error
             ShowError(error02);
             popupError.gameObject.SetActive(true);
