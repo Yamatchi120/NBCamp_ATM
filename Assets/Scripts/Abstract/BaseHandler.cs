@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class ATMHandlerBase : MonoBehaviour
+public abstract class BaseHandler : MonoBehaviour
 {
     [SerializeField] protected GameObject atm;
     [SerializeField] protected GameObject depositBtn;
