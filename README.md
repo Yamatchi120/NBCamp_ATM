@@ -28,3 +28,11 @@
 
 5차 최종 UML Class Diagram - Observer Pattern <br>
 <img src="https://github.com/user-attachments/assets/6a084929-ee84-4a66-8a7c-03a44d5dbae7" width = "600"/><br>
+
+<details>
+ <summary>해보고 싶었던 것</summary>
+ DepositHandler.cs - WithdrawHandler.cs 통합
+ ErrorHandler.cs에서 에러 관리
+ 
+ Observer - MVC 패턴 사용 (위에가 완성 되면)
+</details>
