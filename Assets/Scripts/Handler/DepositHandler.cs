@@ -1,6 +1,5 @@
 public class DepositHandler : BaseHandler
 {
-    // Deposit Trigger
     public override void OnOpen()
     {
         atm.gameObject.SetActive(false);
