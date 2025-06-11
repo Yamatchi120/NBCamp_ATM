@@ -1,6 +1,6 @@
 # NBCamp_ATM
 ## 기술적 의사구현
- - 옵저버 패턴
+ - 옵저버 패턴 ( 오버엔지니어링 )
    - 원래 옵저버 패턴은 Subject - Observer
    - 현재 구현한 옵저버 Subject - Observer - Trigger
 
@@ -23,8 +23,8 @@
 
 1차<br>
 <img src="https://github.com/user-attachments/assets/a5ea2a30-cd35-4770-8908-63cd5340f829" width = "600"/><br>
-3차<br> 
+3차 Observer 사용 X<br> 
 <img src="https://github.com/user-attachments/assets/92a13f51-4ab8-4964-af61-03a0fe54ec7d" width = "600"/><br>
 
-5차 최종 UML Class Diagram<br>
+5차 최종 UML Class Diagram - Observer Pattern <br>
 <img src="https://github.com/user-attachments/assets/6a084929-ee84-4a66-8a7c-03a44d5dbae7" width = "600"/><br>
